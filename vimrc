@@ -4,11 +4,12 @@ syntax enable
 set background=dark
 set t_Co=256
 
-set list
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+" set list
+" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vim-snippets
 call vundle#begin()
 
 " Enable folding
@@ -75,9 +76,8 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
-"let g:snips_trigger_key = '<S-Tab>'
-imap <S-Tab> <Plug>snipMateNextOrTrigger
-smap <S-Tab> <Plug>snipMateNextOrTrigger
+imap <C-\> <Plug>snipMateNextOrTrigger
+smap <C-,> <Plug>snipMateShow
 
 " Colors
 Plugin 'jnurmine/zenburn'
