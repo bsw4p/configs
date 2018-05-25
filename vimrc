@@ -108,6 +108,22 @@ nmap ga <Plug>(EasyAlign)
 " Align to character |
 " gaip*|
 
+" Airline                                                                          
+Plug 'vim-airline/vim-airline'                                                     
+Plug 'vim-airline/vim-airline-themes'                                              
+Plug 'edkolev/tmuxline.vim'                                                        
+                                                                                   
+" Multiple cursors                                                                 
+Plug 'terryma/vim-multiple-cursors'                                                
+                                                                                   
+" Expand regions                                                                   
+Plug 'terryma/vim-expand-region'                                                   
+" Use + key to expand while selection in visual mode                               
+" Use _ key to shrink while selection in visual mode                               
+                                                                                   
+" Moar text selections                                                             
+Plug 'wellle/targets.vim'
+
 call vundle#end()
 filetype plugin indent on
 
