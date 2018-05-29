@@ -129,3 +129,14 @@ filetype plugin indent on
 
 colorscheme zenburn
 set colorcolumn=80
+
+" Window management hotkeys
+" Resizing:
+"    Ctrl-w _           increase current window to max height
+"    Ctrl-w |           increase current window to max width
+"    Ctrl-w +           increase height of current window
+"    Ctrl-w -           decrease height of current window
+"    Ctrl-w >           increase width of current window
+"    Ctrl-w <           decrease width of current window
+"    Ctrl-w <NUM> -     decrease height of by <NUM> in current window
+"    Ctrl-w =           all windows equal
