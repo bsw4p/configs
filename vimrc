@@ -140,3 +140,4 @@ set colorcolumn=80
 "    Ctrl-w <           decrease width of current window
 "    Ctrl-w <NUM> -     decrease height of by <NUM> in current window
 "    Ctrl-w =           all windows equal
+"    :help window-moving
