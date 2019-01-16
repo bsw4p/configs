@@ -163,7 +163,7 @@ nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 
 " show results
-" CTRL+\ o
+" CTRL+\ o<CR>
 nmap <C-\>o :copen
 
 " next result
