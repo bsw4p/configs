@@ -40,12 +40,12 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h; match BadWhitespace /^\t\+/
 set encoding=utf-8
 
 " AutoComplete
-Bundle 'Valloric/YouCompleteMe'
-let g:ycm_autoclose_preview_window_after_completion=1
+"Bundle 'Valloric/YouCompleteMe'
+"let g:ycm_autoclose_preview_window_after_completion=1
 " space-g -> goto definition
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " only ask once if extra_file should be use.
-let g:ycm_confirm_extra_conf = 1
+"let g:ycm_confirm_extra_conf = 1
 
 " Syntax Highlighting
 Plugin 'scrooloose/syntastic'
@@ -141,3 +141,6 @@ set colorcolumn=80
 "    Ctrl-w <NUM> -     decrease height of by <NUM> in current window
 "    Ctrl-w =           all windows equal
 "    :help window-moving
+
+" highlight selected variables 
+autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
