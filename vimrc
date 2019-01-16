@@ -173,6 +173,9 @@ nmap <C-\>n :cn<CR>zv
 " CTRL+\ p
 nmap <C-\>p :cp<CR>zv
 
+" CTRL+t jump back taglist 
+" CTRL+o jump back jumplist
+
 "---------------------------------------------------------------------------
 " Markdown
 Plugin 'godlygeek/tabular'
