@@ -162,6 +162,13 @@ nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
 nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 
+" next result
+" CTRL+\ n
+nmap <C-\>n :cn<CR>zv
+" prev result
+" CTRL+\ p
+nmap <C-\>p :cp<CR>zv
+
 "---------------------------------------------------------------------------
 " Markdown
 Plugin 'godlygeek/tabular'
