@@ -63,7 +63,7 @@ Plugin 'scrooloose/nerdtree'
 
 "---------------------------------------------------------------------------
 " Commenting
-" % Run by \ cc or \ cm
+" % Run by \ c space
 Plugin 'scrooloose/nerdcommenter'
 
 "---------------------------------------------------------------------------
