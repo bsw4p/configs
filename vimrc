@@ -138,40 +138,37 @@ nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 "    nmap <C-@>s <C-W><C-S> :cs find s <C-R>=expand("<cword>")<CR><CR>	
 
 nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>	
-nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
-nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>	
+"                                                                               
+" The following maps all invoke one of the following cscope search types:       
+"                                                                               
+"   's'   symbol: find all references to the token under cursor                 
+nmap <silent> gr  :scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <silent> grr :vert scs find s <C-R>=expand("<cword>")<CR><CR>                   
+"   'g'   global: find global definition(s) of the token under cursor           
+nmap <silent> gd  :scs find g <C-R>=expand("<cword>")<CR><CR>  
+nmap <silent> gdd :vert scs find g <C-R>=expand("<cword>")<CR><CR>                   
+"   'c'   calls:  find all calls to the function name under cursor              
+nmap <silent> gc  :scs find c <C-R>=expand("<cword>")<CR><CR>      
+nmap <silent> gcc :vert scs find c <C-R>=expand("<cword>")<CR><CR>                   
+"   't'   text:   find all instances of the text under cursor                   
+nmap <silent> gt  :scs find t <C-R>=expand("<cword>")<CR><CR>    
+nmap <silent> gtt :vert scs find t <C-R>=expand("<cword>")<CR><CR>                   
+"   'e'   egrep:  egrep search for the word under cursor   
+nmap <silent> gg  :scs find t <C-R>=expand("<cword>")<CR><CR>  
+nmap <silent> ggg :vert scs find t <C-R>=expand("<cword>")<CR><CR>                   
+"   'f'   file:   open the filename under cursor                                
+"   'i'   includes: find files that include the filename under cursor           
+"   'd'   called: find functions that function under cursor calls               
+nmap <silent> ga  :scs find d <C-R>=expand("<cword>")<CR><CR>      
+nmap <silent> gaa :vert scs find d <C-R>=expand("<cword>")<CR><CR>                  
 
-
-" Hitting CTRL-space *twice* before the search type does a vertical 
-" split instead of a horizontal one (vim 6 and up only)
-"
-" (Note: you may wish to put a 'set splitright' in your .vimrc
-" if you prefer the new window on the right instead of the left
-
-nmap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>	
-nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
-nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
-
-" show results
-" CTRL+\ o<CR>
-nmap <C-\>o :copen
-
-" next result
-" CTRL+\ n
-nmap <C-\>n :cn<CR>zv
-" prev result
-" CTRL+\ p
-nmap <C-\>p :cp<CR>zv
+                                                                                
+" show results                                                                  
+nmap <silent> go :copen<CR>                                                     
+" next result                                                                   
+nmap <silent> gn :cn<CR>zv                                                      
+" prev result                                                                   
+nmap <silent> gp :cp<CR>zv              
 
 " CTRL+t jump back taglist 
 " CTRL+o jump back jumplist
