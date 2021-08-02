@@ -149,6 +149,48 @@ nmap <silent> gp :cp<CR>zv
 " CTRL+o jump back jumplist
 
 "---------------------------------------------------------------------------
+" ccls
+ Register ccls C++ lanuage server.
+if executable('/usr/bin/ccls')
+   au User lsp_setup call lsp#register_server({
+      \ 'name': 'ccls',
+      \ 'cmd': {server_info->['ccls']},
+      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+      \ 'initialization_options': {'cache': {'directory': expand('~/.cache/ccls') }},
+      \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+      \ })
+endif
+
+" Key bindings for vim-lsp.
+nmap <silent> gd :belowright LspDefinition<cr>
+nmap <silent> gdd :vert LspDefinition<cr>
+nmap <silent> gr :belowright LspReferences<cr>
+nmap <silent> grr :vert LspReferences<cr>
+nmap <silent> gt :belowright LspTypeHierarchy<cr>
+nmap <silent> gtt :vert LspTypeHierarchy<cr>
+nmap <silent> gp :belowright LspPreviousReference<cr>
+nmap <silent> gc :CclsCallers<cr>
+nmap <silent> gcc :CclsCalleeHierarchy<cr>
+
+nmap <silent> gm :CclsMemberHierarchy<cr>
+nmap <silent> gmf :CclsMemberFunctionHierarchy<cr>
+
+nmap <silent> cccc <C-w>_<cr>
+nmap <silent> cccd <C-w>=<cr>
+nmap <silent> qqqq :q<cr>
+nmap <silent> gn <C-w>w<cr>
+
+"in hierarchy graph open:
+
+nmap <silent> <buffer> o    <Plug>(yggdrasil-toggle-node)
+
+" let g:ccls_log_file = expand('~/my_log_file.txt')
+" let g:lsp_log_verbose = 1
+" let g:lsp_log_file = expand('~/vim-lsp.log')
+
+
+
+"---------------------------------------------------------------------------
 " Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
